@@ -67,6 +67,7 @@ jobs:
       
       - name: making image
         run: |
+          cd immortalwrt
           make -j$(nproc) V=s
       
           
