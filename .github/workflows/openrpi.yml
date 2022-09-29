@@ -61,6 +61,7 @@ jobs:
       
       - name: downloading packages
         run: |
+          cd immortalwrt
           make defconfig
           make download -j8
       
