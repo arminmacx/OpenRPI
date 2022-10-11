@@ -42,6 +42,7 @@ jobs:
           mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip python3-ply \
           python-docutils qemu-utils re2c rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
           vim wget xmlto xxd zlib1g-dev
+          sudo snap install --classic go
           sudo apt autoremove --purge
       
       - name: Git clone
@@ -73,7 +74,8 @@ jobs:
       - name: making image
         run: |
           cd immortalwrt
-          make -j$(nproc) V=s
+          make -j8 V=s
+          
       - name: Compress Bin Folder
         run: |
           cd immortalwrt/bin
